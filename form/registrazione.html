@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <title>Registrazione</title>
+     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/hero.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+  </head>
+  <style>
+    .columns:nth-child(2) {
+      margin-top: -10rem;
+    }
+  </style>
+<body>
+  
+  <section class="hero is-info is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <br>
+        <p class="title is-1">
+          Il mio sito web
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <div class="box cta">
+    <nav class="level">
+      <div class="level-left">
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          
+        </div>
+      </div>
+      <div class="level-right has-text-centered">
+        <div>
+          <div class="buttons">
+          
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <br>
+    <section class="container">
+      <div class="columns is-multiline">
+        <div class="column is-8 is-offset-2 register">
+          <div class="columns">
+            <div class="column right has-text-centered">
+              <h1 class="title is-1">Registrati</h1>
+              <h2 class="subtitle colored is-4">Iscrizione</h2>
+              <br><br>
+            <!-- form -->  
+              <form action="#" method="get" enctype="multipart/form-data" action="action_page.php">
+                
+                <!-- nome -->  
+                <label class="label">Nome</label>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-medium" type="text" placeholder="Nome"  id="fname" name="nome" pattern="[a-zA-Z]">
+                  </div>
+                </div>
+
+                <!-- cognome -->  
+                <label class="label">Cognome</label>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-medium" type="text" placeholder="Cognome" name="Cognome" id="Cognome" pattern="[a-zA-Z]">
+                  </div>
+                </div>
+
+                <!-- email -->  
+                <label class="label">Email</label>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-medium" type="email" placeholder="Email" name="email">
+                  </div>
+                </div>
+
+                <!-- nome -->  
+                <label class="label">Numero di telefono</label>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-medium" type="text" placeholder="Numero di telefono"  id="numCell" name="numCell" pattern="[0-9]">
+                  </div>
+                </div>
+
+                <!-- data nascita --> 
+                <label class="label">Data di nascita</label>
+                <div class="field">
+                  <div class="control">
+                    <!--<label for="birthday">Data di nascita:</label> -->
+                    <input class="input is-medium" type="date" id="birthday" name="birthday"><br><br>
+                  </div>
+                </div>
+
+                <!-- aggiungi file --> 
+                <label class="label">documenti</label>
+                <div class="file has-name is-fullwidth">
+                  <label class="file-label">
+                    <input class="file-input" type="file" name="resume">
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                      </span>
+                      <span class="file-label">
+                        aggiungi un file
+                      </span>
+                    </span>
+                    <span class="file-name">
+                      allegare foto documenti
+                    </span>
+                  </label>
+                </div>
+                <br>
+
+                <!-- genere --> 
+                <label class="label">genere</label>
+                  <!--<label for="cars">seleziona il genere: </label> -->
+                  <div class="select">
+                    <select>
+                      <option value="maschio">Maschio</option>
+                      <option value="femmina">Femmina</option>
+                    </select>
+                  </div>
+                <br><br>
+                
+                <!-- password --> 
+                <label class="label">Password</label>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-medium" type="password" placeholder="Password" name="Password">
+                  </div>
+                </div>
+
+                <!-- password --> 
+                <label class="label">Ripeti Password</label>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-medium" type="password" placeholder="Password" name="Password">
+                  </div>
+                </div>
+
+                <!-- pubblicità --> 
+                <div class="field">
+                  <div class="control">
+                    <label class="label">Vuoi ricevere aggiornamenti:</label>
+                      <input type="radio" id="html" name="fav_language" value="HTML">
+                      <label for="si">Si, grazie</label><br>
+                      <input type="radio" id="css" name="fav_language" value="CSS">
+                      <label for="no">No, grazie</label><br><br>
+                  </div>
+                </div>
+
+                <!-- ricrodami --> 
+                <label class="checkbox">
+                  <input type="checkbox">
+                  ricordami
+                </label>
+
+                <!-- invio --> 
+                <br><br>
+                <button class="button is-info">Invia</button>
+                <br><br><br>  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+                      <p class="has-text-grey"> <center>
+                        <a href="index.html">Accedi</a> &nbsp;·&nbsp;
+                        <a href="restPass.html">Password dimenticata</a> &nbsp;·&nbsp;
+                        <a href="../">Assistenza?</a>
+                        <br><br><br>
+                        
+                      </center>
+                        
+                    </p>
+  </body>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+        gioco forza 4
+-->
+<html>
+    <head>
+        <title>FORZA QUATTRO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <!--int turno=0;-->
+        <script>
+            var turno = 0;
+            var col0 = 5;
+            var col1 = 5;
+            var col2 = 5;
+            var col2 = 5;
+            var col3 = 5;
+            var col4 = 5;
+            var col5 = 5;
+            var col6 = 5;
+        </script>
+        
+        <script>
+            function color(turno) {
+                var src;
+                window.alert('TEST');
+                if ((turno % 2) === 0) {
+                    //img diventa di colore rosso
+                    window.alert('rosso');
+                    src = "foto/forza4_rosso.jpeg";
+                } else {
+                    //img diventa di giallo
+                    window.alert('giallo');
+                    src = "foto/forza4_giallo.jpeg";
+                }
+                return src;
+            }
+
+            function vittoria(pos) {
+
+                //ORRIZZONTALE
+                if (id(pos) === id(pos + 1) === id(pos + 2) === id(pos + 3)) {
+                    if ((turno % 2) === 0) {
+                        window.alert('vince rosso');
+                    } else {
+                        window.alert('vince giallo');
+                    }
+                }
+
+                //VERTICALE
+                if (id(pos) === id(pos - 10) === id(pos - 20) === id(pos - 30)) {
+                    if ((turno % 2) === 0) {
+                        window.alert('vince rosso');
+                    } else {
+                        window.alert('vince giallo');
+                    }
+                }
+
+                //DIAGONALE
+                if (id(pos) === id(pos - 11) === id(pos - 22) === id(pos - 33)) {
+                    if ((turno % 2) === 0) {
+                        window.alert('vince rosso');
+                    } else {
+                        window.alert('vince giallo');
+                    }
+                }
+
+        </script>
+    <center>
+        <h1>gioco forza quattri</h1>
+        <table>
+            <tr> <!-- riga 1-->
+                <td><img id="00" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="01" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="02" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="03" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="04" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="05" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="06" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+            </tr>
+
+            <tr> <!-- riga 2-->
+                <td><img id="10" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="11" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="12" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="13" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="14" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="15" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="16" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+            </tr>
+
+            <tr> <!-- riga 3-->
+                <td><img alt="20" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img alt="21" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img alt="22" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img alt="23" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img alt="24" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img alt="25" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img alt="26" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+            </tr>
+
+            <tr> <!-- riga 4-->
+                <td><img id="30" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="31" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="32" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="33" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="34" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="35" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="36" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+            </tr>
+
+            <tr> <!-- riga 5-->
+                <td><img id="40" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="41" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="42" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="43" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="44" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="45" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="46" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+            </tr>
+
+            <tr> <!-- riga 6-->
+                <td><img id="50" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="51" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="52" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="53" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="54" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="55" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+                <td><img id="56" alt="vuoto" src="foto/forza4_vuoto.jpeg" width="80" height="80"></td>
+            </tr>
+
+            <tr> <!-- riga 7-->
+                <td><img alt="freccia" id="60" src="foto/freccia.png" width="80" height="80" style="cursor: -moz-zoom-in;"  onmouseover="this.width = 90; this.height = 90;" onmouseout="this.width = 80; this.height = 80"
+                         onclick="document.getElementById(col0 + '0').src = color(turno); turno++; col0--;"></td>
+                <td><img alt="freccia" id="61" src="foto/freccia.png" width="80" height="80" style="cursor: -moz-zoom-in;"  onmouseover="this.width = 90; this.height = 90;" onmouseout="this.width = 80; this.height = 80"
+                         onclick="document.getElementById(col1 + '1').src = color(turno); turno++; col1--;"></td>
+                <td><img alt="freccia" id="62" src="foto/freccia.png" width="80" height="80" style="cursor: -moz-zoom-in;"  onmouseover="this.width = 90; this.height = 90;" onmouseout="this.width = 80; this.height = 80"
+                         onclick="document.getElementById(col2 + '2').src = color(turno); turno++; col2--;"></td>
+                <td><img alt="freccia" id="63" src="foto/freccia.png" width="80" height="80" style="cursor: -moz-zoom-in;"  onmouseover="this.width = 90; this.height = 90;" onmouseout="this.width = 80; this.height = 80"
+                         onclick="document.getElementById(col3 + '3').src = color(turno); turno++; col3--;"></td>
+                <td><img alt="freccia" id="64" src="foto/freccia.png" width="80" height="80" style="cursor: -moz-zoom-in;"  onmouseover="this.width = 90; this.height = 90;" onmouseout="this.width = 80; this.height = 80"
+                         onclick="document.getElementById(col4 + '4').src = color(turno); turno++; col4--;"></td>
+                <td><img alt="freccia" id="65" src="foto/freccia.png" width="80" height="80" style="cursor: -moz-zoom-in;"  onmouseover="this.width = 90; this.height = 90;" onmouseout="this.width = 80; this.height = 80"
+                         onclick="document.getElementById(col5 + '5').src = color(turno); turno++; col5--;"></td>
+                <td><img alt="freccia" id="66" src="foto/freccia.png" width="80" height="80" style="cursor: -moz-zoom-in;"  onmouseover="this.width = 90; this.height = 90;" onmouseout="this.width = 80; this.height = 80"
+                         onclick="document.getElementById(col6 + '6').src = color(turno); turno++; col5--;"></td>
+            </tr>
+
+        </table>
+    </center>
+</body>
+</html>
