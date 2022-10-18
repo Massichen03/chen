@@ -1,0 +1,140 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <title>Gioco</title>
+     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/hero.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+  </head>
+  <style>
+    .columns:nth-child(2) {
+      margin-top: -10rem;
+    }
+  </style>
+<body>
+  
+  <section class="hero is-info is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <br>
+        <p class="title is-1">
+          Gioco dell'impiccato
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <div class="box cta">
+    <nav class="level">
+      <div class="level-left">
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          
+        </div>
+      </div>
+      <div class="level-right has-text-centered">
+        <div>
+          <div class="buttons">
+          
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <br>
+    <section class="container">
+      <div class="columns is-multiline">
+        <div class="column is-8 is-offset-2 register">
+          <div class="columns">
+            <div class="column right has-text-centered">
+              <h1 class="title is-1">Gioco iniziato</h1>
+              <h2 class="subtitle colored is-4">divertiti</h2>
+              <br><br>
+
+              <div class="box">
+                <strong>Parola da indovinare:</strong>  <br>
+                <h2 id=parolaDaIndovinare class="title is-2">__ __ __ __ __ </h2>
+              </div>
+              
+              <div class="container">
+                    <img id="img" src="fotoImpiccato/impiccato1.jpg" width="300" height="300" class="mb-4" alt=""/>
+                </div>
+              
+            <!-- form -->  
+              <form  method="get" enctype="multipart/form-data" action="gioco.html">
+                
+                <!-- Lettera -->  
+                <label class="label">Scegli una lettera</label>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-medium" type="text" placeholder="Lettera"  id="flettera" name="lettera" pattern="^[A-Z]{1}$">
+                    
+                  </div>
+                </div>
+
+                <div class="notification is-primary is-light">
+                  <button class="delete"></button>
+                  La parola selezionata deve essere scritta in maiuscolo e ricordati di non ripetere le lettere già usate
+                </div>
+
+                <!-- invio --> 
+                <br><br><br>
+                <button class="button is-info" oneclick="controllo()">Invia</button>
+                <br><br><br>  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+        <p class="has-text-grey"> <center>
+          <a href="index.html">accedi</a> &nbsp;·&nbsp;
+          <a href="restPass.html">Password dimenticata</a> &nbsp;·&nbsp;
+          <a href="../">Assistenza?</a>
+          <br><br><br>
+          
+          </center>
+        </p>
+
+      <script>
+          var parol1 = document.getELementByID("fparola");
+          var parola = "CIAO";
+          var parInd = document.getELementByID("parolaDaIndovinare");
+          var lettera = document.getELementByID("flettera");
+          var img = document.getELementByID("img");
+          int n=2 i=0;
+          var temp="";
+
+        function controllo(){
+          
+          if(parola.contains(lettera.value)){
+              while(i<parola.lenght){
+                if(parola[i]==lettera){
+                  temp+= lettera + " ";
+                }else{
+                  temp += "__ ";
+                }
+              }
+            parInd=var;
+            
+          }else{
+            img.src = ("fotoImpiccato/impiccato" + n + ".jpg");
+            n++;
+          }
+        }
+        
+      </script>
+  </body>
