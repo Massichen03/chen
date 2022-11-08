@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+        <title>Registrazione</title>
+
+        <!--<link rel="stylesheet" href="../css/chen.css" /> -->
+
+        <link rel="stylesheet" href="css/chen.css" />
+
+
+    </head>
+    <!--<style>
+        .columns:nth-child(2) {
+            margin-top: -10rem;
+        }
+    </style> -->
+    <body>
+
+        <section class="hero is-info is-small">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <br>
+                    <p class="title is-1">
+                        Gioco Morra cinese
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="box cta">
+            <nav class="level">
+                <div class="level-left">
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+
+                        <h1 class="title is-1">Inizio gioco</h1> <br>
+                    </div>
+                </div>
+                <div class="level-right has-text-centered">
+                    <div>
+                        <div class="buttons">
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <br>
+        <section class="container">
+            <div class="columns is-multiline">
+                <div class="column is-8 is-offset-2 register">
+                    <div class="columns">
+                        <div class="column right has-text-centered">
+                            <br><br>
+
+                            <!-- form -->  
+                            <form action="#" method="get" enctype="multipart/form-data" action="action_page.php">
+
+
+
+
+                                <!-- nome -->  
+                                <label class="label">Nome</label>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-medium" type="text" placeholder="Nome"  id="txtNome" name="nome" pattern="^[a-zA-Z.&]{2.}$">
+                                    </div>
+                                </div>
+
+                                <!-- num giochi --> 
+                                <label class="label">Numero giochi</label>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-medium" type="text" placeholder="Numerpo partite"  id="txtNumG" name="txtNumG" pattern="^[1-9]{1}$">
+                                    </div>
+                                </div>
+
+                                <!-- invio --> 
+                                <br>
+                                <button class="button is-info" id="btxInvia" onclick="disable()">Invia</button>
+                                <br><br><br><br>  
+
+
+                                <!-- foto pc --> 
+                                <img id="fotoPc" src="" >
+
+                                <!-- foto giocatore--> 
+                                <img id="foto" src="img/carta_forbice_sasso.png" usemap="#image-map" >
+                                <map name="image-map">
+                                    <!-- carta --> 
+                                    <area coords="238,325,63,171" shape="rect" onclick="carta();"> 
+                                    <!-- forbice --> 
+                                    <area coords="1,0,180,129"    shape="rect" onclick="forbice();"> 
+                                    <!-- sasso --> 
+                                    <area coords="399,167,265,45" shape="rect"onclick="sasso();">  
+                                </map>
+
+                                <br><br><br>
+
+                                <p id="vittoria">Scegli la mossa da fare</p>
+                                
+                                <br><br>
+                                <button class="button is-info" id="btxInvia" onclick="continua()">continua</button>
+
+                            </form>
+                            <br><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p class="has-text-grey"> <center>
+        <a href="versineDiff.html">Riaggiorna pagina</a> 
+        <br><br><br>
+
+    </center>
+
+    <script>
+
+
+        /*var giocate = document.getElementById("txtNome");
+         var nomeG = document.getElementById("txtNumG");
+         var g2 = document.getElementById("g2");
+         g2= nomeG + " = 0 " 
+         var txtGiocate= document.getElementById("nGiochi");
+         txtGiocate = "giocatte rimanenti: " + giocate;*/
+
+        var num = Math.floor(Math.random() * 3);
+        var imgPC = document.getElementById("fotoPc");
+        var img = document.getElementById("foto");
+        var vitt = document.getElementById("vittoria");
+        var nome = document.getElementById("txtNome");
+
+
+
+        function disable() {
+            document.getElementById("txtNome").disabled = true;
+            document.getElementById("btxInvia").disabled = true;
+            document.getElementById("txtNumG").disabled = true;
+        }
+
+        function pc() {
+            switch (num) {
+                case 0:
+                    vitt.textContent = "carta";
+                    imgPC.src = "img/carta_sx.png";
+                    break;
+                case 1:
+                    vitt.textContent = "forbice";
+                    imgPC.src = "img/forbice_sx.png";
+                    break;
+                case 2:
+                    vitt.textContent = "sasso";
+                    imgPC.src = "img/sasso_sx.png";
+                    break;
+            }
+        }
+
+        function carta() {
+            pc();
+            img.src = "img/carta_dx.png";
+
+            switch (num) {
+                case 0: //carta
+                    vitt.textContent = "Pareggio";
+                    break;
+                case 1: //forbice
+                    vitt.textContent = "Vince il PC";
+                    break;
+                case 2: //sasso
+                    vitt.textContent = "Vince il giocatore";
+                    break;
+            }
+
+        }
+
+        function forbice() {
+            pc();
+            img.src = "img/forbice_dx.png";
+
+            switch (num) {
+                case 0: //carta
+                    vitt.textContent = "Vince il giocatore";
+                    break;
+                case 1: //forbice
+                    vitt.textContent = "Pareggio";
+                    break;
+                case 2: //sasso
+                    vitt.textContent = "Vince il PC";
+                    break;
+            }
+        }
+
+        function sasso() {
+            pc();
+            img.src = "img/sasso_dx.png";
+
+            switch (num) {
+                case 0: //carta
+                    vitt.textContent = "Vince il PC";
+                    break;
+                case 1: //forbice
+                    vitt.textContent = "vince il Giocatore";
+                    break;
+                case 2: //sasso
+                    vitt.textContent = "Pareggio";
+                    break;
+            }
+        }
+
+
+        function continua() {
+            imgPC.src = "";
+            imgPC.src = "img/carta_forbice_sasso.png";
+        }
+
+
+    </script>
+</body>
