@@ -88,9 +88,9 @@
                                     <area coords="1,0,180,129"    shape="rect" onclick="forbice();"> 
                                     <!-- sasso --> 
                                     <area coords="399,167,265,45" shape="rect"onclick="sasso();">  
-                                </map>
+                                </map> 
 
-                                <p id="vittoria">Scegli la mossa da fare</p>
+                                <p id="vittoria"></p>
 
                                 <br><br><br>
                         </div>
@@ -113,10 +113,13 @@
         var vitt = document.getElementById("vittoria");
         var nome = document.getElementById("txtNome");
         
+        document.getElementById("foto").src=""; 
         
         function disable(){
             document.getElementById("txtNome").disabled=true;
             document.getElementById("btxInvia").disabled=true;
+            document.getElementById("foto").src="img/carta_forbice_sasso.png"; 
+            vitt.textContent = "Scegli la mossa da fare";
         }
 
         function pc() {

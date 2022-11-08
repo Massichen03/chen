@@ -10,17 +10,10 @@
         <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
         <title>Registrazione</title>
 
-        <!--<link rel="stylesheet" href="../css/chen.css" /> -->
-
         <link rel="stylesheet" href="css/chen.css" />
 
 
     </head>
-    <!--<style>
-        .columns:nth-child(2) {
-            margin-top: -10rem;
-        }
-    </style> -->
     <body>
 
         <section class="hero is-info is-small">
@@ -66,8 +59,6 @@
                             <form action="#" method="get" enctype="multipart/form-data" action="action_page.php">
 
 
-
-
                                 <!-- nome -->  
                                 <label class="label">Nome</label>
                                 <div class="field">
@@ -89,7 +80,6 @@
                                 <button class="button is-info" id="btxInvia" onclick="disable()">Invia</button>
                                 <br><br><br><br>  
 
-
                                 <!-- foto pc --> 
                                 <img id="fotoPc" src="" >
 
@@ -102,21 +92,22 @@
                                     <area coords="1,0,180,129"    shape="rect" onclick="forbice();"> 
                                     <!-- sasso --> 
                                     <area coords="399,167,265,45" shape="rect"onclick="sasso();">  
-                                </map>
+                                </map>  
 
                                 <br><br><br>
 
-                                <p id="vittoria">Scegli la mossa da fare</p>
-                                
+                                <p id="vittoria"></p>
+                                <p id="nGiochi"></p>
+
                                 <br><br>
-                                <button class="button is-info" id="btxInvia" onclick="continua()">continua</button>
+                                <button class="button is-info" id="btxContinua" onclick="continua()">continua</button>
 
                             </form>
                             <br><br><br>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </section>
         <p class="has-text-grey"> <center>
         <a href="versineDiff.html">Riaggiorna pagina</a> 
@@ -125,14 +116,13 @@
     </center>
 
     <script>
+        document.getElementById("foto").src = "";
+        document.getElementById("btxContinua").disabled = true;
 
-
-        /*var giocate = document.getElementById("txtNome");
-         var nomeG = document.getElementById("txtNumG");
-         var g2 = document.getElementById("g2");
-         g2= nomeG + " = 0 " 
-         var txtGiocate= document.getElementById("nGiochi");
-         txtGiocate = "giocatte rimanenti: " + giocate;*/
+        /*var txtGiocate = document.getElementById("nGiochi");
+        txtGiocate = "giocatte rimanenti: " + giocate;*/
+        var NumVittPc = 0;
+        var NumVittGioc = 0;
 
         var num = Math.floor(Math.random() * 3);
         var imgPC = document.getElementById("fotoPc");
@@ -140,12 +130,14 @@
         var vitt = document.getElementById("vittoria");
         var nome = document.getElementById("txtNome");
 
-
-
         function disable() {
             document.getElementById("txtNome").disabled = true;
             document.getElementById("btxInvia").disabled = true;
             document.getElementById("txtNumG").disabled = true;
+        document.getElementById("btxContinua").disabled = false;
+            document.getElementById("foto").src = "img/carta_forbice_sasso.png";
+            vitt.textContent = "Scegli la mossa da fare";
+
         }
 
         function pc() {
@@ -174,10 +166,14 @@
                     vitt.textContent = "Pareggio";
                     break;
                 case 1: //forbice
+                    NumVittPc++;
                     vitt.textContent = "Vince il PC";
+
                     break;
                 case 2: //sasso
+                    NumVittGioc++;
                     vitt.textContent = "Vince il giocatore";
+
                     break;
             }
 
@@ -188,14 +184,18 @@
             img.src = "img/forbice_dx.png";
 
             switch (num) {
-                case 0: //carta
-                    vitt.textContent = "Vince il giocatore";
+                case 0: //carta, Vince il giocatore
+                    NumVittGioc++;
+                    vitt.textContent = "Vince il giocatore" + NumVittGioc + " VS pc " + NumVittPc;
+
                     break;
                 case 1: //forbice
                     vitt.textContent = "Pareggio";
                     break;
-                case 2: //sasso
+                case 2: //sasso, Vince il PC
+                    NumVittPc++;
                     vitt.textContent = "Vince il PC";
+
                     break;
             }
         }
@@ -206,10 +206,14 @@
 
             switch (num) {
                 case 0: //carta
+                    NumVittPc++;
                     vitt.textContent = "Vince il PC";
+
                     break;
                 case 1: //forbice
+                    NumVittGioc++;
                     vitt.textContent = "vince il Giocatore";
+
                     break;
                 case 2: //sasso
                     vitt.textContent = "Pareggio";
@@ -219,8 +223,9 @@
 
 
         function continua() {
-            imgPC.src = "";
+            img.src = "";
             imgPC.src = "img/carta_forbice_sasso.png";
+            vitt.textContent = "Scegli la mossa da fare";;
         }
 
 
